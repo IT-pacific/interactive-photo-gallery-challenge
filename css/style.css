@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  user-select: none;
+  display: block;
+  max-width: 100%;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'slnt' 0;
+  line-height: 1.5;
+  padding: 2rem 4rem;
+  overflow: hidden;
+  background-color: #333;
+  height: 100vh;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  height: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.gallery-item img {
+  filter: brightness(0.7);
+  object-fit: cover;
+  height: 100%;
+  transition: transform 1s, filter 1s ease-in-out;
+}
+
+.gallery-item.hovered img {
+  transform: scale(1.04);
+  filter: grayscale(100%);
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+.overlay-container {
+  position: absolute;
+  bottom: 4rem;
+  margin: 0 3rem;
+  color: white;
+  z-index: 2;
+}
+
+.overlay-container h1 {
+  text-wrap: wrap;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.overlay-container p {
+  font-size: 1.4rem;
+}
+
+.gallery-item.hovered .overlay-container h1,
+.gallery-item.hovered .overlay-container p {
+  animation: slideup 1s forwards;
+}
+
+.overlay-container a {
+  display: none;
+  text-decoration: none;
+  color: #37a5fe;
+  font-weight: bold;
+  font-size: 1.2rem;
+  animation: fadeIn 2s forwards;
+}
+
+.overlay-container a i {
+  margin-left: 0.5rem;
+}
+
+.gallery-item.hovered .overlay-container a {
+  display: block;
+}
+
+/* Breakpoints  */
+
+@media (max-width: 992px) {
+  .overlay-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .overlay-container p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 1rem 2rem;
+  }
+  .overlay-container {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 0rem 0rem;
+  }
+}
+
+/* Animation keyframes */
+
+@keyframes slideup {
+  from {
+    /* transform: translateY(0); */
+    margin-bottom: -10px;
+  }
+
+  to {
+    /* transform: translateY(-30px); */
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
