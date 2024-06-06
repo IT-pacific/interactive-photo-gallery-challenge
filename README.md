@@ -32,4 +32,4 @@ Transform input string where length is divisible by 3, 5 and 3 && 5
 
 .Started with if divisible by 3 && 5 or 15 becouse always when divisible by 3 and 5 would return with reaching the scenario
 
-## Both challenges 2 and 3 are in same folder [challenges] in root directory, to run it just open [test.htm] file all results from both challenges are console logged from there.
+## Both challenges 2 and 3 are in same folder [challenges] in root directory, to run it just open [test.html] file all results from both challenges are console logged from there.
